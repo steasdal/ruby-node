@@ -7,7 +7,7 @@ This Docker image is cobbled together from the
 a few other assorted bits such as grunt-cli, bower and compass.
 
 ## Build
-This docker image is built in Travis CI:
+This Docker image is built in Travis CI:
 <https://travis-ci.org/steasdal/ruby-node>
 
 ## Docker Hub
