@@ -1,4 +1,4 @@
-# Ruby 2.2, Node 2.4, httpd 2.4
+# Ruby 2.2, Node 4.2, httpd 2.4
 
 ## Sources
 This Docker image is cobbled together from the
