@@ -2,6 +2,13 @@ FROM buildpack-deps:jessie
 
 MAINTAINER Sam Teasdale <samuel.teasdale@gmail.com>
 
+#             _
+#  _ __ _   _| |__  _   _
+# | '__| | | | '_ \| | | |
+# | |  | |_| | |_) | |_| |
+# |_|   \__,_|_.__/ \__, |
+#                   |___/
+
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
   && for key in \
@@ -55,6 +62,13 @@ RUN gem install bundler --version "$BUNDLER_VERSION" \
 # don't create ".bundle" in all our apps
 ENV BUNDLE_APP_CONFIG $GEM_HOME
 
+#                  _
+#  _ __   ___   __| | ___
+# | '_ \ / _ \ / _` |/ _ \
+# | | | | (_) | (_| |  __/
+# |_| |_|\___/ \__,_|\___|
+#
+
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 4.2.2
 
@@ -71,10 +85,12 @@ RUN npm install -g bower
 RUN npm install -g grunt-cli
 RUN gem install compass
 
-
-
-
-###################################################################################################
+#  _     _   _             _
+# | |__ | |_| |_ _ __   __| |
+# | '_ \| __| __| '_ \ / _` |
+# | | | | |_| |_| |_) | (_| |
+# |_| |_|\__|\__| .__/ \__,_|
+#               |_|
 
 ENV HTTPD_PREFIX /usr/local/apache2
 ENV PATH $PATH:$HTTPD_PREFIX/bin
@@ -133,12 +149,6 @@ RUN buildDeps=' \
 	&& apt-get purge -y --auto-remove $buildDeps
 
 COPY httpd-foreground /usr/local/bin/
-
-###################################################################################################
-
-
-
-
 
 EXPOSE 80
 CMD [ "/bin/bash" ]
